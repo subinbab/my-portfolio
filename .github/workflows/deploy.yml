@@ -3,7 +3,7 @@ name: Deploy to Google Cloud Run
 on:
   push:
     branches:
-      - main
+      - main  # Trigger on main branch push
   workflow_dispatch:
 
 env:
