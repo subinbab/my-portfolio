@@ -3,7 +3,7 @@ name: Deploy to Google Cloud Run
 on:
   push:
     branches:
-      - main  # Trigger on main branch push
+      - main
   workflow_dispatch:
 
 env:
@@ -31,7 +31,9 @@ jobs:
           service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}'
 
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1      - name: Authorize Docker push
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Authorize Docker push
         run: gcloud auth configure-docker
 
       - name: Build and Push Container
