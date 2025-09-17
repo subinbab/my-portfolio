@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Shell Scripting - Subin Babu | .NET Full Stack Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/learn-shell.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-dark.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="name">
+                <span>Subin Babu</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="game.html">Play</a>
+                <a href="learn-shell.html" class="active">Learn Shell</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="avatar">
+                    <img src="images/8ea65c7717cd4c838f948d80c4de4580.jpg" alt="Profile">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="learn-shell-container">
+        <div class="shell-header">
+            <h1>Learn Shell Scripting</h1>
+            <p>Master the art of shell scripting with interactive tutorials and hands-on examples</p>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-section">
+            <h2>Your Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0% Complete</span>
+        </div>
+
+        <!-- Tutorial Sections -->
+        <div class="tutorial-sections">
+            
+            <!-- Basics Section -->
+            <section class="tutorial-section" id="basics">
+                <div class="section-header">
+                    <h2>1. Shell Scripting Basics</h2>
+                    <div class="section-status" data-section="basics">
+                        <span class="status-icon">○</span>
+                        <span class="status-text">Not Started</span>
+                    </div>
+                </div>
+                
+                <div class="lesson-content">
+                    <h3>What is Shell Scripting?</h3>
+                    <p>Shell scripting is a powerful way to automate tasks in Unix/Linux systems. A shell script is a text file containing a series of commands that the shell can execute.</p>
+                    
+                    <div class="code-example">
+                        <h4>Your First Shell Script</h4>
+                        <pre><code class="language-bash">#!/bin/bash
+# This is a comment
+echo "Hello, World!"
+echo "Welcome to shell scripting!"</code></pre>
+                        <button class="run-code-btn" onclick="runCode('basics-1')">Run Code</button>
+                    </div>
+                    
+                    <div class="output-container" id="output-basics-1"></div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise 1: Create Your First Script</h4>
+                        <p>Write a script that displays your name and today's date.</p>
+                        <textarea class="code-input" id="exercise-1" placeholder="#!/bin/bash
+# Write your script here..."></textarea>
+                        <button class="check-exercise-btn" onclick="checkExercise('exercise-1', 'basics')">Check Answer</button>
+                        <div class="exercise-feedback" id="feedback-exercise-1"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Variables Section -->
+            <section class="tutorial-section" id="variables">
+                <div class="section-header">
+                    <h2>2. Variables and User Input</h2>
+                    <div class="section-status" data-section="variables">
+                        <span class="status-icon">○</span>
+                        <span class="status-text">Not Started</span>
+                    </div>
+                </div>
+                
+                <div class="lesson-content">
+                    <h3>Working with Variables</h3>
+                    <p>Variables store data that can be used throughout your script. In bash, you don't need to declare variable types.</p>
+                    
+                    <div class="code-example">
+                        <h4>Variable Examples</h4>
+                        <pre><code class="language-bash">#!/bin/bash
+# Variable assignment (no spaces around =)
+name="John Doe"
+age=25
+today=$(date +%Y-%m-%d)
+
+echo "Name: $name"
+echo "Age: $age"
+echo "Today is: $today"
+
+# Reading user input
+echo "What's your favorite color?"
+read color
+echo "Your favorite color is: $color"</code></pre>
+                        <button class="run-code-btn" onclick="runCode('variables-1')">Run Code</button>
+                    </div>
+                    
+                    <div class="output-container" id="output-variables-1"></div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise 2: Calculator Script</h4>
+                        <p>Create a script that asks for two numbers and displays their sum.</p>
+                        <textarea class="code-input" id="exercise-2" placeholder="#!/bin/bash
+# Create a simple calculator..."></textarea>
+                        <button class="check-exercise-btn" onclick="checkExercise('exercise-2', 'variables')">Check Answer</button>
+                        <div class="exercise-feedback" id="feedback-exercise-2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Structures Section -->
+            <section class="tutorial-section" id="control">
+                <div class="section-header">
+                    <h2>3. Control Structures</h2>
+                    <div class="section-status" data-section="control">
+                        <span class="status-icon">○</span>
+                        <span class="status-text">Not Started</span>
+                    </div>
+                </div>
+                
+                <div class="lesson-content">
+                    <h3>If Statements and Loops</h3>
+                    <p>Control structures allow you to make decisions and repeat actions in your scripts.</p>
+                    
+                    <div class="code-example">
+                        <h4>If Statements and Loops</h4>
+                        <pre><code class="language-bash">#!/bin/bash
+# If statement
+echo "Enter a number:"
+read number
+
+if [ $number -gt 10 ]; then
+    echo "Number is greater than 10"
+elif [ $number -eq 10 ]; then
+    echo "Number is exactly 10"
+else
+    echo "Number is less than 10"
+fi
+
+# For loop
+echo "Counting from 1 to 5:"
+for i in {1..5}; do
+    echo "Count: $i"
+done
+
+# While loop
+echo "Countdown:"
+count=3
+while [ $count -gt 0 ]; do
+    echo "$count..."
+    count=$((count - 1))
+done
+echo "Done!"</code></pre>
+                        <button class="run-code-btn" onclick="runCode('control-1')">Run Code</button>
+                    </div>
+                    
+                    <div class="output-container" id="output-control-1"></div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise 3: Grade Calculator</h4>
+                        <p>Write a script that takes a numeric grade and displays the letter grade (A, B, C, D, F).</p>
+                        <textarea class="code-input" id="exercise-3" placeholder="#!/bin/bash
+# Grade calculator script..."></textarea>
+                        <button class="check-exercise-btn" onclick="checkExercise('exercise-3', 'control')">Check Answer</button>
+                        <div class="exercise-feedback" id="feedback-exercise-3"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Functions Section -->
+            <section class="tutorial-section" id="functions">
+                <div class="section-header">
+                    <h2>4. Functions and File Operations</h2>
+                    <div class="section-status" data-section="functions">
+                        <span class="status-icon">○</span>
+                        <span class="status-text">Not Started</span>
+                    </div>
+                </div>
+                
+                <div class="lesson-content">
+                    <h3>Creating Reusable Functions</h3>
+                    <p>Functions help you organize code and avoid repetition. You can also work with files and directories.</p>
+                    
+                    <div class="code-example">
+                        <h4>Functions and File Operations</h4>
+                        <pre><code class="language-bash">#!/bin/bash
+# Function definition
+greet() {
+    local name=$1
+    echo "Hello, $name! Welcome to shell scripting."
+}
+
+# Function with return value
+add_numbers() {
+    local num1=$1
+    local num2=$2
+    local result=$((num1 + num2))
+    echo $result
+}
+
+# Using functions
+greet "Alice"
+result=$(add_numbers 15 25)
+echo "15 + 25 = $result"
+
+# File operations
+echo "Creating a test file..."
+echo "This is a test file" > test.txt
+echo "File contents:"
+cat test.txt
+
+# Check if file exists
+if [ -f "test.txt" ]; then
+    echo "test.txt exists!"
+    echo "File size: $(wc -c < test.txt) bytes"
+fi</code></pre>
+                        <button class="run-code-btn" onclick="runCode('functions-1')">Run Code</button>
+                    </div>
+                    
+                    <div class="output-container" id="output-functions-1"></div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise 4: File Backup Script</h4>
+                        <p>Create a function that backs up a file by copying it with a timestamp.</p>
+                        <textarea class="code-input" id="exercise-4" placeholder="#!/bin/bash
+# File backup function..."></textarea>
+                        <button class="check-exercise-btn" onclick="checkExercise('exercise-4', 'functions')">Check Answer</button>
+                        <div class="exercise-feedback" id="feedback-exercise-4"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <h2>Additional Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Cheat Sheet</h3>
+                    <ul>
+                        <li><code>$0</code> - Script name</li>
+                        <li><code>$1, $2...</code> - Script arguments</li>
+                        <li><code>$#</code> - Number of arguments</li>
+                        <li><code>$?</code> - Last command exit status</li>
+                        <li><code>$$</code> - Process ID</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Common Commands</h3>
+                    <ul>
+                        <li><code>ls</code> - List files</li>
+                        <li><code>cd</code> - Change directory</li>
+                        <li><code>pwd</code> - Print working directory</li>
+                        <li><code>grep</code> - Search text</li>
+                        <li><code>find</code> - Find files</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Always use <code>#!/bin/bash</code></li>
+                        <li>Quote variables: <code>"$var"</code></li>
+                        <li>Use meaningful variable names</li>
+                        <li>Add comments to explain complex logic</li>
+                        <li>Check exit codes for error handling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="js/learn-shell.js"></script>
+    <script src="js/space-theme.js"></script>
+</body>
+</html>
